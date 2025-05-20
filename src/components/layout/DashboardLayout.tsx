@@ -15,7 +15,7 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
     const savedPreference = localStorage.getItem('darkMode');
     // Check if browser is in dark mode
     const browserPreference = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
+
     return savedPreference ? savedPreference === 'true' : browserPreference;
   });
 
@@ -41,23 +41,14 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
 
       {/* Main content */}
       <div className="lg:pl-64 flex flex-col min-h-screen">
-        <Header 
-          onOpenSidebar={() => setSidebarOpen(true)} 
+        <Header
+          onOpenSidebar={() => setSidebarOpen(true)}
           isDarkMode={isDarkMode}
           toggleDarkMode={toggleDarkMode}
         />
 
         {/* Page content */}
-        <main className="flex-grow p-4 md:p-6">
-          {children || <Outlet />}
-        </main>
-
-        {/* Footer */}
-        <footer className="py-4 px-6 border-t border-gray-200 dark:border-gray-700">
-          <div className="text-center text-sm text-gray-500 dark:text-gray-400">
-            &copy; {new Date().getFullYear()} Bridge Sales. All rights reserved.
-          </div>
-        </footer>
+        <main className="flex-grow p-4 md:p-6">{children || <Outlet />}</main>
       </div>
 
       {/* Notifications */}

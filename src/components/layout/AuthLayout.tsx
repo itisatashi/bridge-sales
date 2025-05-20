@@ -10,13 +10,6 @@ const AuthLayout: React.FC = () => {
           <Outlet />
         </div>
       </main>
-
-      {/* Footer */}
-      <footer className="py-4 px-6">
-        <div className="text-center text-sm text-gray-500 dark:text-gray-400">
-          &copy; {new Date().getFullYear()} Bridge Sales. All rights reserved.
-        </div>
-      </footer>
     </div>
   );
 };
