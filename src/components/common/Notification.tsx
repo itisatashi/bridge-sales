@@ -87,7 +87,7 @@ const Notification: React.FC<NotificationProps> = ({
   return (
     <div
       className={`
-        max-w-sm w-full border-l-4 ${styles.borderColor} ${styles.bgColor} p-4 shadow-md rounded-r-md
+        w-full border-l-4 ${styles.borderColor} ${styles.bgColor} p-4 shadow-md rounded-r-md
         transition-all duration-300 ease-in-out
         ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-full'}
       `}
@@ -95,11 +95,11 @@ const Notification: React.FC<NotificationProps> = ({
     >
       <div className="flex items-start">
         <div className={`flex-shrink-0 ${styles.iconColor}`}>{styles.icon}</div>
-        <div className="ml-3 w-0 flex-1 pt-0.5">
-          {title && <p className={`text-sm font-medium ${styles.titleColor}`}>{title}</p>}
-          <p className={`text-sm ${styles.messageColor} mt-1`}>{message}</p>
+        <div className="ml-3 flex-1 pt-0.5 overflow-hidden">
+          {title && <p className={`text-sm font-medium ${styles.titleColor} truncate`}>{title}</p>}
+          <p className={`text-sm ${styles.messageColor} mt-1 break-words`}>{message}</p>
         </div>
-        <div className="ml-4 flex-shrink-0 flex">
+        <div className="ml-2 flex-shrink-0 flex">
           <button
             type="button"
             className={`inline-flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500`}
