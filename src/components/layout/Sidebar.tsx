@@ -4,18 +4,14 @@ import {
   Home, 
   ShoppingBag, 
   Users, 
-  Bell, 
-  Menu, 
   X, 
   LogOut,
-  BarChart2,
   Package,
   Truck,
   UserCheck,
   Settings
 } from 'lucide-react';
 import { useAuthStore } from '@/store/auth.store';
-import { useNotificationsStore } from '@/store/notifications.store';
 import { UserRole } from '@/types';
 
 interface SidebarProps {
@@ -26,7 +22,6 @@ interface SidebarProps {
 const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
   const location = useLocation();
   const { user, logout } = useAuthStore();
-  const { unreadCount } = useNotificationsStore();
 
   // Navigation items based on user role
   const navigationItems = user?.role === UserRole.ADMIN 

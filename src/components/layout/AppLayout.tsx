@@ -1,28 +1,16 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { 
-  HomeIcon, 
-  ShoppingBagIcon, 
-  UserIcon, 
-  XMarkIcon,
-  ArrowRightOnRectangleIcon
-} from '@heroicons/react/24/outline';
+import { XMarkIcon, ArrowRightOnRectangleIcon } from '@heroicons/react/24/outline';
 import { 
   Home, 
   ShoppingBag, 
   Users, 
-  Bell, 
-  Menu, 
-  X, 
-  LogOut,
-  BarChart2,
   Package,
   Truck,
   UserCheck,
   Settings
 } from 'lucide-react';
 import { useAuthStore } from '@/store/auth.store';
-import { useNotificationsStore } from '@/store/notifications.store';
 import { UserRole } from '@/types';
 import type { ReactNode } from 'react';
 

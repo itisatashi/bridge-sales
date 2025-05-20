@@ -13,7 +13,7 @@ const Header: React.FC<HeaderProps> = ({
   isDarkMode, 
   toggleDarkMode 
 }) => {
-  const { notifications, unreadCount, markAllAsRead } = useNotificationsStore();
+  const { unreadCount } = useNotificationsStore();
 
   return (
     <header className="sticky top-0 z-10 bg-white dark:bg-gray-800 shadow-sm">

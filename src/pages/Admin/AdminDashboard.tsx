@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { TrendingUp, Users, ShoppingBag, Clock, Package, UserCheck, Truck, ArrowUp, ArrowDown } from 'lucide-react';
+import { TrendingUp, Users, ShoppingBag, Clock, Package, Truck, ArrowUp } from 'lucide-react';
 import AppLayout from '@/components/layout/AppLayout';
 import Card from '@/components/common/Card';
 import Badge from '@/components/common/Badge';

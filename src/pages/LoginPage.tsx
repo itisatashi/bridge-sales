@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuthStore } from '@/stores/auth.store';
-import Button from '@/components/ui/Button';
-import Input from '@/components/ui/Input';
-import Card from '@/components/ui/Card';
+import { useAuthStore } from '@/store/auth.store';
+import Button from '@/components/common/Button';
+import Input from '@/components/common/Input';
+import Card from '@/components/common/Card';
 
 const LoginPage = () => {
   // State for form inputs
@@ -60,7 +60,7 @@ const LoginPage = () => {
               type="email"
               id="email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
               placeholder="agent@example.com"
               required
               autoFocus
@@ -72,7 +72,7 @@ const LoginPage = () => {
               type="password"
               id="password"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
               placeholder="••••••••"
               required
               helperText="Hint: Use 'password' for demo accounts"

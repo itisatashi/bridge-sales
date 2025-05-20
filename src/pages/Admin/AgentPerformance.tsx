@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { type User, UserRole, type Order } from '@/types';
+import { UserRole, type Order } from '@/types';
 import AppLayout from '@/components/layout/AppLayout';
 import Card from '@/components/common/Card';
 import { useOrdersStore } from '@/store/orders.store';
@@ -150,7 +150,7 @@ const AgentPerformance: React.FC = () => {
         <>
           {/* Performance Summary Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-            {agentPerformance.map((agent, index) => (
+            {agentPerformance.map((agent) => (
               <Card key={agent.id} className="p-4">
                 <div className="flex items-center mb-2">
                   <div className="flex-shrink-0 h-10 w-10 bg-gray-200 dark:bg-gray-600 rounded-full flex items-center justify-center mr-3">

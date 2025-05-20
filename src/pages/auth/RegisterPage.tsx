@@ -5,7 +5,6 @@ import { Mail, Lock, User, Phone } from 'lucide-react';
 
 import Input from '@/components/common/Input';
 import Button from '@/components/common/Button';
-import Select from '@/components/common/Select';
 import Card from '@/components/common/Card';
 import { useAuthStore } from '@/store/auth.store';
 import { useNotificationsStore } from '@/store/notifications.store';
@@ -24,8 +23,13 @@ const RegisterPage: React.FC = () => {
   const navigate = useNavigate();
   const { register: registerUser, error, isLoading } = useAuthStore();
   const { addNotification } = useNotificationsStore();
-  
-  const { register, handleSubmit, formState: { errors }, watch } = useForm<RegisterFormData>({
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    watch,
+  } = useForm<RegisterFormData>({
     defaultValues: {
       name: '',
       email: '',
@@ -40,13 +44,8 @@ const RegisterPage: React.FC = () => {
 
   const onSubmit = async (data: RegisterFormData) => {
     try {
-      await registerUser(
-        data.name, 
-        data.email, 
-        data.password, 
-        data.role as UserRole
-      );
-      
+      await registerUser(data.name, data.email, data.password, data.role as UserRole);
+
       // Check if registration was successful (no error)
       if (!error) {
         addNotification({
@@ -61,11 +60,6 @@ const RegisterPage: React.FC = () => {
       // Error is handled by the store
     }
   };
-
-  const roleOptions = [
-    { value: UserRole.AGENT, label: 'Sales Agent' },
-    { value: UserRole.ADMIN, label: 'Administrator' },
-  ];
 
   return (
     <Card className="shadow-lg">
@@ -165,12 +159,7 @@ const RegisterPage: React.FC = () => {
         </div>
 
         <div className="pt-2">
-          <Button
-            type="submit"
-            variant="primary"
-            fullWidth
-            isLoading={isLoading}
-          >
+          <Button type="submit" variant="primary" fullWidth isLoading={isLoading}>
             Create Account
           </Button>
         </div>

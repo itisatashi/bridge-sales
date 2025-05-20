@@ -7,7 +7,7 @@ import Card from '@/components/common/Card';
 import Badge from '@/components/common/Badge';
 import { useOrdersStore } from '@/store/orders.store';
 import { useAuthStore } from '@/store/auth.store';
-import { OrderStatus, type Order } from '@/types';
+import { OrderStatus } from '@/types';
 import OrderDetailsModal from '@/components/orders/OrderDetailsModal';
 
 const MyOrders: React.FC = () => {
